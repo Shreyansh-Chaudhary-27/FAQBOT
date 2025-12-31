@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\encryption.py
+# hypothesis_version: 6.148.7
+
+[b'faq_admin_dashboard_salt', 100000, 'utf-8']

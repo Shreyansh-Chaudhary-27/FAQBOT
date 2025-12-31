@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faqbackend\settings.py
+# hypothesis_version: 6.148.7
+
+[120, 'APP_DIRS', 'BACKEND', 'DIRS', 'ENGINE', 'NAME', 'OPTIONS', 'UTC', 'assets', 'captcha', 'context_processors', 'db.sqlite3', 'default', 'django.contrib.admin', 'django.contrib.auth', 'en-us', 'faq', 'faqbackend.urls', 'static/']

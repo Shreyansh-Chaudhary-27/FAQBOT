@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - FAQ Dashboard</title>
+    {% load static %}
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom Modern CSS -->
+    <link rel="stylesheet" href="{% static 'faq/admin/css/login.css' %}">
+</head>
+
+<body class="login-page">
+    <div class="login-wrapper">
+        <div class="login-card">
+
+            <!-- Header -->
+            <div class="login-header">
+                <i class="fas fa-shield-alt icon-shield"></i>
+                <h1 class="login-title">Admin Dashboard</h1>
+                <p class="login-subtitle">Secure Access Portal</p>
+            </div>
+
+            <!-- Messages / Alerts -->
+            {% if messages %}
+            <div class="messages-container">
+                {% for message in messages %}
+                <div
+                    class="alert {% if message.tags == 'error' %}alert-danger{% elif message.tags == 'warning' %}alert-warning{% elif message.tags == 'success' %}alert-success{% else %}alert-info{% endif %}">
+                    {% if message.tags == 'error' %}
+                    <i class="fas fa-exclamation-triangle"></i>
+                    {% elif message.tags == 'warning' %}
+                    <i class="fas fa-exclamation-circle"></i>
+                    {% elif message.tags == 'success' %}
+                    <i class="fas fa-check-circle"></i>
+                    {% else %}
+                    <i class="fas fa-info-circle"></i>
+                    {% endif %}
+                    <span>{{ message }}</span>
+                    <button type="button" class="btn-close"
+                        onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Failed Attempts Warning -->
+            {% if failed_attempts and failed_attempts >= 3 %}
+            <div class="alert alert-warning">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <strong>Security Notice:</strong> {{ failed_attempts }} failed login attempt{{
+                    failed_attempts|pluralize }} detected.
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Login Form -->
+            <form method="post" id="loginForm" novalidate>
+                {% csrf_token %}
+
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" name="username" class="form-input" id="{{ form.username.id_for_label }}"
+                            placeholder="Enter username" value="{{ form.username.value|default:'' }}" required
+                            autocomplete="username">
+                    </div>
+                    {% if form.username.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.username.errors.0 }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" name="password" class="form-input" id="{{ form.password.id_for_label }}"
+                            placeholder="Enter password" required autocomplete="current-password">
+                        <button type="button" class="btn-toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    {% if form.password.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.password.errors.0 }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Captcha -->
+                <div class="form-group">
+                    <label class="form-label">
+                        Security Verification
+                        {% if captcha_failed %}<span
+                            style="color: var(--error-color); margin-left:8px;">(Failed)</span>{% endif %}
+                    </label>
+                    <div class="captcha-container">
+                        <div class="captcha-display">
+                            {{ form.captcha }}
+                        </div>
+                        <button type="button" class="btn-refresh captcha-refresh" title="Refresh CAPTCHA">
+                            <i class="fas fa-sync-alt"></i> Refresh Image
+                        </button>
+                    </div>
+                    {% if form.captcha.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.captcha.errors.0 }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-primary" id="loginButton">
+                    <span class="button-text">Sign In</span>
+                    <div class="spinner"></div>
+                    <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </button>
+
+            </form>
+
+            <div class="footer-text">
+                <i class="fas fa-lock"></i> Protected by Admin Security
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Password Toggle
+            const toggleBtn = document.getElementById('togglePassword');
+            const passwordInput = document.querySelector('input[name="password"]');
+
+            if (toggleBtn && passwordInput) {
+                toggleBtn.addEventListener('click', () => {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    toggleBtn.querySelector('i').classList.toggle('fa-eye');
+                    toggleBtn.querySelector('i').classList.toggle('fa-eye-slash');
+                });
+            }
+
+            // Captcha Refresh Logic
+            const captchaRefreshBtn = document.querySelector('.captcha-refresh');
+            if (captchaRefreshBtn) {
+                captchaRefreshBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const icon = this.querySelector('i');
+                    if (icon) icon.classList.add('fa-spin');
+
+                    // Use the standard django-simple-captcha endpoint
+                    // This bypasses the custom admin wrapper which might be causing permission/header issues
+                    const refreshUrl = "/captcha/refresh/";
+
+                    fetch(refreshUrl, {
+                        method: 'GET',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        }
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            // Standard library returns {key: "...", image_url: "..."} directly
+                            if (data.key && data.image_url) {
+                                // Update Image
+                                const img = document.querySelector('.captcha-display img');
+                                if (img) img.src = data.image_url;
+
+                                // Update Hidden Key Input
+                                const hidden = document.querySelector('input[name="captcha_0"]');
+                                if (hidden) hidden.value = data.key;
+
+                                // Clear User Input
+                                const input = document.querySelector('input[name="captcha_1"]');
+                                if (input) {
+                                    input.value = '';
+                                    input.focus();
+                                }
+                            } else {
+                                console.error('Invalid captcha response:', data);
+                                alert('Received invalid data from captcha service.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error refreshing captcha:', error);
+                            alert(`Refresh failed (${error.message}). Please reload the page.`);
+                        })
+                        .finally(() => {
+                            if (icon) icon.classList.remove('fa-spin');
+                        });
+                });
+            }
+
+
+            // Button Loading State
+            const form = document.getElementById('loginForm');
+            const btn = document.getElementById('loginButton');
+
+            if (form && btn) {
+                form.addEventListener('submit', function () {
+                    const spinner = btn.querySelector('.spinner');
+                    const text = btn.querySelector('.button-text');
+                    const icon = btn.querySelector('.fa-arrow-right');
+
+                    if (spinner) spinner.classList.add('show');
+                    if (text) text.textContent = 'Verifying...';
+                    if (icon) icon.style.display = 'none';
+                    btn.disabled = true;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

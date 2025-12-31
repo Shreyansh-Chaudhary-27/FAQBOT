@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\admin_views.py
+# hypothesis_version: 6.148.7
+
+[100, 150, '%Y-%m-%d', '-created_at', '-last_activity', '-request_count', 'active_users', 'captcha', 'created_at', 'current_page', 'dashboard', 'date_from', 'date_to', 'decrypted_email', 'decrypted_name', 'faq/admin/login.html', 'form', 'id', 'last_activity', 'page', 'paginator', 'password', 'pending_requests', 'recent_interactions', 'recent_requests', 'recent_responses', 'recent_users', 'request_count', 'requests', 'requests__created_at', 'requests__response', 'response', 'response_count', 'response_rate', 'search_email', 'session_id', 'total_faqs', 'total_requests', 'total_responses', 'total_users', 'user', 'user_history', 'username', 'users_data', 'users_page']

@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphura Chatbot Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'faq/style.css' %}">
+    <link rel="stylesheet" href="{% static 'faq/chatbot.css' %}">
+    <style>
+        .chatbot-container {
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main class="main-content">
+        <section class="demo-section">
+            <h2>Testing Graphura AI Chatbot</h2>
+            <p>Click the chat button in the bottom right to start conversation.</p>
+            <div class="test-questions">
+                <h3>Try asking:</h3>
+                <ul>
+                    <li>"What services does Graphura offer?"</li>
+                    <li>"How can I contact support?"</li>
+                    <li>"Tell me about pricing"</li>
+                    <li>"What are your working hours?"</li>
+                </ul>
+            </div>
+            <div class="instructions">
+                <h3>Instructions:</h3>
+                <p>1. Click the chat button (bottom right)</p>
+                <p>2. Enter your name and email</p>
+                <p>3. Start asking questions</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="header-left">
+                <div class="chatbot-avatar">
+                    <img src="{% static 'faq/images/graphura_logo.jpg' %}" alt="Graphura logo" class="chatbot-logo-img">
+                    <!-- <span class="chatbot-logo-fallback">G</span> -->
+                </div>
+                <div>
+                    <h3>Graphura Assistant</h3>
+                    <span class="status online">Online</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="maximizeBtn" class="icon-btn" title="Full Screen" aria-label="Full Screen"><i
+                        class="fas fa-expand"></i></button>
+                <button id="minimizeBtn" class="icon-btn" title="Minimize" aria-label="Minimize Chat"><i
+                        class="fas fa-minus"></i></button>
+                <button id="closeBtn" class="icon-btn" title="Close" aria-label="Close Chat"><i
+                        class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <div class="chatbot-messages" id="chatMessages"></div>
+
+        <div class="chatbot-input-area">
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots"><span></span><span></span><span></span></div>
+                <p>Graphura Assistant is typing...</p>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="chatInput" placeholder="Type your question here..." autocomplete="off"
+                    aria-label="Type your question">
+                <button id="sendBtn" class="send-btn" aria-label="Send Message"><i
+                        class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="quick-questions">
+                <p>Quick questions (swipe/scroll to see more):</p>
+                <div class="quick-buttons quick-buttons-scroll">
+                    <button class="quick-btn" data-question="How do I apply for an internship?">Apply for
+                        internship</button>
+                    <button class="quick-btn" data-question="Where is the leave application link?">Leave link</button>
+                    <button class="quick-btn" data-question="Where is the verification portal?">Verification
+                        portal</button>
+                    <button class="quick-btn" data-question="What services does Graphura provide?">Services
+                        offered</button>
+                    <button class="quick-btn" data-question="What are the working hours?">Working hours</button>
+                    <button class="quick-btn" data-question="Where can I find the planner?">Planner link</button>
+                    <button class="quick-btn" data-question="Is the internship paid?">Stipend info</button>
+                    <button class="quick-btn" data-question="Can an internship convert to a job?">Placement
+                        opportunity</button>
+                    <button class="quick-btn" data-question="What are the leave limits?">Leave limits</button>
+                    <button class="quick-btn" data-question="Who do I contact for onboarding issues?">Onboarding
+                        help</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open Chatbot">
+        <i class="fas fa-comment-dots"></i>
+        <span class="notification-badge" id="notificationBadge">1</span>
+    </button>
+
+    <div class="modal-overlay" id="welcomeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome to Graphura Assistant</h2>
+                <p>Enter your details to start chatting</p>
+            </div>
+            <div class="modal-body">
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="userName"><i class="fas fa-user"></i> Your Name</label>
+                        <input type="text" id="userName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail"><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" id="userEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-primary">Start Chatting</button>
+                        <p class="privacy-note">Your data is stored locally for this demo</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <p>Graphura Chatbot Demo v2.0</p>
+    </footer>
+
+    <script src="{% static 'faq/chatbot.js' %}"></script>
+</body>
+
+</html>

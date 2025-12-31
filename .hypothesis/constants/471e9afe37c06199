@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\urls.py
+# hypothesis_version: 6.148.7
+
+['faqs', 'faqs/', 'health', 'health/', 'requests', 'requests/', 'responses', 'responses/', 'users', 'users/']

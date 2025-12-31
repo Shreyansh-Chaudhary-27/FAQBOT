@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }} | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="{% static 'faq/admin/css/faq_form.css' %}">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:dashboard' %}" class="menu-link">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:user_history' %}" class="menu-link">
+                            <i class="fa-solid fa-users"></i>
+                            <span>User Management</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:faq_management' %}" class="menu-link active">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                            <span>FAQ Bot Management</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <nav class="top-navbar">
+                <div class="nav-left">
+                    <button class="toggle-sidebar-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">{{ page_title }}</h1>
+                </div>
+                <div class="nav-right">
+                    <div class="admin-profile">
+                        <div class="admin-info">
+                            <span class="admin-name">{{ request.user.username }}</span>
+                            <span class="admin-role">Administrator</span>
+                        </div>
+                        <div class="admin-avatar">
+                            {{ request.user.username|make_list|first|upper }}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Content -->
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ form_action }} FAQ Entry</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Form with Explicit Action URL for Robustness -->
+                        <form method="post"
+                            action="{% if form_action == 'Update' %}{% url 'admin_dashboard:faq_edit' faq.id %}{% else %}{% url 'admin_dashboard:faq_create' %}{% endif %}">
+                            {% csrf_token %}
+
+                            {% if form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>Please correct the errors below:</strong>
+                                {{ form.non_field_errors }}
+                            </div>
+                            {% endif %}
+
+                            <!-- Question Field -->
+                            <div class="form-group">
+                                <label for="{{ form.question.id_for_label }}" class="form-label">Question</label>
+                                {{ form.question }}
+                                {% if form.question.errors %}
+                                <div class="error-text">{{ form.question.errors|striptags }}</div>
+                                {% endif %}
+                                <small class="help-text">The query that users might ask.</small>
+                            </div>
+
+                            <!-- Answer Field -->
+                            <div class="form-group">
+                                <label for="{{ form.answer.id_for_label }}" class="form-label">Answer</label>
+                                {{ form.answer }}
+                                {% if form.answer.errors %}
+                                <div class="error-text">{{ form.answer.errors|striptags }}</div>
+                                {% endif %}
+                                <small class="help-text">The response the bot will provide.</small>
+                            </div>
+
+                            <!-- Category Field -->
+                            <div class="form-group">
+                                <label for="{{ form.category.id_for_label }}" class="form-label">Category</label>
+                                {{ form.category }}
+                                {% if form.category.errors %}
+                                <div class="error-text">{{ form.category.errors|striptags }}</div>
+                                {% endif %}
+                                <small class="help-text">High-level grouping (e.g., leave, payroll).</small>
+                            </div>
+
+                            <!-- Audience Field -->
+                            <div class="form-group">
+                                <label for="{{ form.audience.id_for_label }}" class="form-label">Audience</label>
+                                {{ form.audience }}
+                                {% if form.audience.errors %}
+                                <div class="error-text">{{ form.audience.errors|striptags }}</div>
+                                {% endif %}
+                                <small class="help-text">Who this FAQ is for (e.g., intern, full-time).</small>
+                            </div>
+
+                            <!-- Intent Field -->
+                            <div class="form-group">
+                                <label for="{{ form.intent.id_for_label }}" class="form-label">Intent</label>
+                                {{ form.intent }}
+                                {% if form.intent.errors %}
+                                <div class="error-text">{{ form.intent.errors|striptags }}</div>
+                                {% endif %}
+                                <small class="help-text">Type of query (e.g., info, request, policy).</small>
+                            </div>
+
+                            <!-- Condition Field -->
+                            <div class="form-group">
+                                <label for="{{ form.condition.id_for_label }}" class="form-label">Condition</label>
+                                {{ form.condition }}
+                                {% if form.condition.errors %}
+                                <div class="error-text">{{ form.condition.errors|striptags }}</div>
+                                {% endif %}
+                                <small class="help-text">Specific sub-condition (e.g., default, 3_months, *).</small>
+                            </div>
+
+                            <!-- Composite Key Field (Read-only) -->
+                            <div class="form-group">
+                                <label for="{{ form.composite_key.id_for_label }}" class="form-label">Composite
+                                    Key</label>
+                                {{ form.composite_key }}
+                                <small class="help-text">Automatically generated from the fields above.</small>
+                            </div>
+
+                            <!-- Keywords Field -->
+                            <div class="form-group">
+                                <label for="{{ form.keywords.id_for_label }}" class="form-label">Keywords</label>
+                                {{ form.keywords }}
+                                {% if form.keywords.errors %}
+                                <div class="error-text">{{ form.keywords.errors|striptags }}</div>
+                                {% endif %}
+                                <small class="help-text">Comma-separated keywords to help matching.</small>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa-solid fa-save"></i> Save FAQ
+                                </button>
+                                <a href="{% url 'admin_dashboard:faq_management' %}" class="btn btn-outline">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Inline Sidebar/JS Support -->
+    <script src="{% static 'faq/admin/js/faq_form.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faqbackend\middleware.py
+# hypothesis_version: 6.148.7
+
+[204, '*', '/admin-dashboard/', 'Content-Type', 'GET, POST, OPTIONS', 'OPTIONS', 'last_activity']

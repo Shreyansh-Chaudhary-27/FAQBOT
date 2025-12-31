@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faqbackend\urls.py
+# hypothesis_version: 6.148.7
+
+['admin-dashboard/', 'admin/', 'api/', 'captcha.urls', 'captcha/', 'faq.admin_urls', 'faq.urls', 'home']

@@ -1,0 +1,307 @@
+INFO 2025-12-11 14:18:05,255 admin_security Session timeout due to inactivity (1237 minutes) for user admin from IP 127.0.0.1
+WARNING 2025-12-11 14:18:11,600 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 14:18:21,705 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-11 14:18:22,395 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-11 14:18:22,437 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 14:36:12,073 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 14:41:19,944 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 14:41:22,778 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 14:41:50,893 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 14:48:42,641 admin_security Session timeout due to inactivity (30 minutes) for user admin from IP 127.0.0.1
+WARNING 2025-12-11 14:52:16,055 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-11 14:52:24,953 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+INFO 2025-12-11 14:52:36,168 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-11 14:52:36,784 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-11 14:52:36,822 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-11 15:02:16,213 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 15:02:29,703 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+WARNING 2025-12-11 15:02:30,426 admin_security Authentication failed - invalid credentials for username 'admin' from IP 127.0.0.1
+INFO 2025-12-11 15:02:41,997 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+WARNING 2025-12-11 15:02:42,517 admin_security Authentication failed - invalid credentials for username 'admin' from IP 127.0.0.1
+INFO 2025-12-11 15:02:58,733 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+WARNING 2025-12-11 15:02:59,460 admin_security Authentication failed - invalid credentials for username 'admin' from IP 127.0.0.1
+WARNING 2025-12-11 15:02:59,488 admin_security Multiple failed login attempts (3) from IP 127.0.0.1
+WARNING 2025-12-11 15:03:59,258 admin_security CAPTCHA validation failed for IP 127.0.0.1
+WARNING 2025-12-11 15:03:59,273 admin_security Multiple failed login attempts (4) from IP 127.0.0.1
+INFO 2025-12-11 15:05:28,769 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+WARNING 2025-12-11 15:05:29,368 admin_security Authentication failed - invalid credentials for username 'admin' from IP 127.0.0.1
+WARNING 2025-12-11 15:05:29,382 admin_security Multiple failed login attempts (5) from IP 127.0.0.1
+ERROR 2025-12-11 15:05:29,382 admin_security Excessive failed login attempts (5) from IP 127.0.0.1 - potential brute force attack
+INFO 2025-12-11 15:06:34,565 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-11 15:06:35,272 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-11 15:06:35,302 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 15:08:36,851 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-11 18:02:10,738 admin_security Unauthorized access attempt to /admin-dashboard/login from IP 127.0.0.1
+INFO 2025-12-11 18:02:22,321 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-11 18:02:23,299 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-11 18:02:23,313 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-11 18:02:55,003 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-11 19:46:19,786 admin_security Unauthorized access attempt to /admin-dashboard/login from IP 127.0.0.1
+INFO 2025-12-11 19:46:30,338 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-11 19:46:31,775 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-11 19:46:31,794 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-14 04:21:25,290 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+WARNING 2025-12-14 04:21:27,678 admin_security Authentication failed - invalid credentials for username 'admin' from IP 127.0.0.1
+INFO 2025-12-14 04:21:39,227 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-14 04:21:45,658 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-14 04:21:45,708 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-14 04:35:55,840 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-14 18:55:18,307 admin_security Admin access granted to user admin for /admin-dashboard/login from IP 127.0.0.1
+WARNING 2025-12-14 21:14:01,878 admin_security CAPTCHA validation failed for IP 127.0.0.1
+WARNING 2025-12-14 21:14:26,232 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+INFO 2025-12-14 21:14:37,736 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-14 21:14:38,927 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-14 21:14:38,969 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-14 21:15:35,296 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-14 22:17:08,147 admin_security Session timeout due to inactivity (37 minutes) for user admin from IP 127.0.0.1
+WARNING 2025-12-14 22:17:18,672 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-14 22:17:32,788 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-14 22:17:33,129 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-14 22:17:33,151 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-14 22:18:10,848 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:07:45,930 admin_security Session timeout due to inactivity (30 minutes) for user admin from IP 127.0.0.1
+WARNING 2025-12-15 00:07:51,977 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:08:03,481 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-15 00:08:03,918 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-15 00:08:03,956 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:09:55,004 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:11:01,972 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:13:28,299 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:14:48,425 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:01,759 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:02,738 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:03,671 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:04,925 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:05,472 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:05,720 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:05,900 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:06,059 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:06,242 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:06,406 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:06,597 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:17:06,802 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 00:19:05,514 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 13:46:45,591 admin_security Session timeout due to inactivity (727 minutes) for user admin from IP 127.0.0.1
+WARNING 2025-12-15 13:46:50,334 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 13:47:01,640 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-15 13:47:02,734 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-15 13:47:02,791 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 14:45:32,077 admin_security Session timeout due to inactivity (35 minutes) for user admin from IP 127.0.0.1
+WARNING 2025-12-15 14:45:37,315 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 14:45:39,509 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 14:45:50,424 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-15 14:45:51,135 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-15 14:45:51,196 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 14:46:41,159 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 14:46:46,881 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 14:47:25,768 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 14:47:30,447 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 14:47:44,859 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 14:47:49,900 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-15 14:48:33,173 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 14:58:27,940 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 15:02:14,660 admin_security Unauthorized access attempt to /admin-dashboard/faq/ from IP 127.0.0.1
+WARNING 2025-12-15 15:04:55,618 admin_security Unauthorized access attempt to /admin-dashboard/faq/ from IP 127.0.0.1
+WARNING 2025-12-15 15:05:55,871 admin_security Unauthorized access attempt to /admin-dashboard/faq/ from IP 127.0.0.1
+WARNING 2025-12-15 16:09:02,589 admin_security Unauthorized access attempt to /admin-dashboard/users/ from IP 127.0.0.1
+WARNING 2025-12-15 16:09:30,739 admin_security Unauthorized access attempt to /admin-dashboard/users/ from IP 127.0.0.1
+WARNING 2025-12-15 16:59:56,435 admin_security Unauthorized access attempt to /admin-dashboard/login from IP 127.0.0.1
+WARNING 2025-12-15 17:00:06,776 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-15 17:00:12,393 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+INFO 2025-12-15 17:00:15,275 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-15 17:00:16,737 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-15 17:00:16,755 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 17:12:32,302 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 17:15:30,820 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-15 17:15:31,812 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-15 17:15:31,828 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-15 17:16:25,819 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 18:02:59,354 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 18:03:08,154 admin_security CAPTCHA validation failed for IP 127.0.0.1
+INFO 2025-12-15 18:03:22,651 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-15 18:03:23,629 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-15 18:03:23,646 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-15 19:00:46,642 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-15 19:21:55,627 admin_security Unauthorized access attempt to /admin-dashboard/login from IP 127.0.0.1
+INFO 2025-12-15 19:27:44,965 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-15 19:27:46,513 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-15 19:27:46,534 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-16 00:26:06,521 admin_security Unauthorized access attempt to /admin-dashboard/login from IP 127.0.0.1
+WARNING 2025-12-16 00:38:39,992 admin_security CAPTCHA validation failed for IP 127.0.0.1
+INFO 2025-12-16 00:38:51,798 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-16 00:38:52,775 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-16 00:38:52,795 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-16 00:44:15,306 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-16 00:44:16,288 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-16 00:44:16,308 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-16 00:46:11,105 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:46:12,592 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:46:14,880 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:46:17,464 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:46:41,131 admin_security CAPTCHA validation failed for IP 127.0.0.1
+WARNING 2025-12-16 00:46:42,770 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:37,697 admin_security CAPTCHA validation failed for IP 127.0.0.1
+WARNING 2025-12-16 00:48:43,018 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:43,667 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:43,898 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:46,282 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:46,883 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:47,298 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:47,793 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:48,139 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:49,154 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:49,353 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:49,538 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:49,730 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:48:58,895 admin_security CAPTCHA validation failed for IP 127.0.0.1
+WARNING 2025-12-16 00:48:58,902 admin_security Multiple failed login attempts (3) from IP 127.0.0.1
+INFO 2025-12-16 00:49:11,905 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-16 00:49:12,896 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-16 00:49:12,912 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:16,841 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:17,592 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:17,841 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:22,208 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:51,648 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:51,839 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:52,065 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:52,487 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:52,696 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:53,751 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:53,952 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:54,136 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:55,864 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:56,031 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:56,208 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:49:56,391 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:51:54,639 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:51:59,048 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+WARNING 2025-12-16 00:52:12,728 admin_security Unauthorized access attempt to /admin-dashboard/refresh-captcha/ from IP 127.0.0.1
+INFO 2025-12-16 00:54:49,169 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-16 00:54:50,145 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-16 00:54:50,161 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-16 01:58:37,575 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 01:58:43,845 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 01:58:48,752 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:05:03,892 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:05:08,797 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:05:16,282 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:06:17,990 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:08:06,258 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:08:13,087 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:09:08,239 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:09:52,590 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:14:16,835 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:14:33,305 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:17:28,179 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:18:54,020 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:19:01,913 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:19:41,542 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:20:31,823 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:20:43,080 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:21:40,169 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:21:44,875 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:21:49,891 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:23:18,867 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:23:22,457 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 02:23:28,564 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 17:50:51,229 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-16 17:51:10,413 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-16 17:51:11,650 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-16 17:51:11,674 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-16 18:03:15,721 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 18:09:07,699 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 18:09:11,113 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 18:09:13,888 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 18:09:51,194 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 18:10:04,451 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-16 18:14:12,252 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 11:48:33,914 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-18 11:49:15,205 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-18 11:49:16,915 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-18 11:49:16,947 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-18 11:50:07,403 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 11:50:15,362 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 11:50:18,448 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 11:50:20,630 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 11:50:28,993 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/create/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 12:03:23,555 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-18 12:03:29,685 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-18 12:03:32,243 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-18 12:03:32,284 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-18 12:07:20,669 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 12:08:12,929 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/create/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 12:08:46,320 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/create/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 12:09:26,605 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/1/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 12:14:53,993 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+WARNING 2025-12-18 12:14:57,417 admin_security Unauthorized POST request to admin dashboard /admin-dashboard/faq/2/edit/ by user admin from IP 127.0.0.1
+INFO 2025-12-18 12:56:31,671 admin_security Session timeout due to inactivity (34 minutes) for user admin from IP 127.0.0.1
+WARNING 2025-12-18 12:56:40,643 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-18 12:56:51,293 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-18 12:56:53,182 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-18 12:56:53,212 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-18 13:48:47,655 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-18 13:48:57,852 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-18 13:48:58,832 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-18 13:48:58,849 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-18 18:52:32,544 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-18 18:52:39,009 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-18 18:52:40,105 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-18 18:52:40,140 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-18 18:59:12,035 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-18 18:59:21,447 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-18 18:59:22,928 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-18 18:59:22,960 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-18 19:09:34,636 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-18 19:09:44,523 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-18 19:09:45,602 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-18 19:09:45,622 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-18 21:21:06,556 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-18 21:21:15,590 admin_security CAPTCHA validation failed for IP 127.0.0.1
+INFO 2025-12-18 21:21:27,689 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-18 21:21:29,837 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-18 21:21:29,869 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-22 10:15:24,925 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-22 10:15:31,839 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-22 10:15:32,810 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-22 10:15:32,831 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-22 10:16:13,729 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-22 11:54:31,741 admin_security Session timeout due to inactivity (98 minutes) for user admin from IP 127.0.0.1
+WARNING 2025-12-22 11:54:33,165 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-22 11:54:40,311 admin_security CAPTCHA validation failed for IP 127.0.0.1
+INFO 2025-12-22 11:54:46,940 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-22 11:54:48,351 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-22 11:54:48,373 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-22 12:59:41,995 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-25 23:29:10,123 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-27 21:20:08,055 admin_security Unauthorized access attempt to /admin-dashboard/login from IP 127.0.0.1
+INFO 2025-12-27 21:20:18,134 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-27 21:20:19,663 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-27 21:20:19,720 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-27 21:28:44,440 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-27 21:28:59,389 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-27 21:29:00,795 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-27 21:29:00,875 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-27 21:39:18,941 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-27 21:39:27,520 admin_security CAPTCHA validation failed for IP 127.0.0.1
+INFO 2025-12-27 21:39:35,079 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-27 21:39:36,075 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-27 21:39:36,119 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-30 13:48:03,581 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-30 13:48:10,665 admin_security CAPTCHA validation failed for IP 127.0.0.1
+INFO 2025-12-30 13:48:17,164 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-30 13:48:18,297 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-30 13:48:18,420 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-30 14:08:44,157 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-30 19:48:03,927 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-30 19:48:10,601 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-30 19:48:11,819 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-30 19:48:11,931 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-30 19:54:26,177 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-30 19:54:35,895 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-30 19:54:37,302 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-30 19:54:37,332 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1
+WARNING 2025-12-31 12:10:38,586 admin_security Unauthorized access attempt to /admin-dashboard/ from IP 127.0.0.1
+INFO 2025-12-31 12:10:45,391 admin_security Authentication attempt for username 'admin' from IP 127.0.0.1
+INFO 2025-12-31 12:10:47,671 admin_security Successful authentication for user 'admin' from IP 127.0.0.1
+INFO 2025-12-31 12:10:47,729 admin_security Admin access granted to user admin for /admin-dashboard/ from IP 127.0.0.1

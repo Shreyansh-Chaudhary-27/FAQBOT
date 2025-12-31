@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faqbackend\middleware.py
+# hypothesis_version: 6.148.7
+
+[204, '*', ',', '/admin-dashboard/', 'Content-Type', 'GET', 'GET, POST, OPTIONS', 'HEAD', 'HTTP_X_FORWARDED_FOR', 'OPTIONS', 'REMOTE_ADDR', 'admin_security', 'last_activity', 'last_logged_access']

@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\tests.py
+# hypothesis_version: 6.148.7
+
+[100, 128, 150, 200, 302, 500, '\x00', '-id', '/admin-dashboard/', 'Test User', 'Test request', 'captcha', 'captcha_0', 'captcha_1', 'errorlist', 'name="captcha_0"', 'name="captcha_1"', 'name="password"', 'name="username"', 'password', 'regularuser', 'save', 'test@example.com', 'test_session', 'testadmin', 'testpass123', 'username', 'wrong_answer', 'wrongpass', 'wronguser']

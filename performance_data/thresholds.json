@@ -1,0 +1,26 @@
+{
+  "response_time": {
+    "warning": 3.0,
+    "critical": 6.0
+  },
+  "confidence_score": {
+    "warning": 0.4,
+    "critical": 0.2
+  },
+  "error_rate": {
+    "warning": 0.05,
+    "critical": 0.15
+  },
+  "system_health": {
+    "warning": 0.8,
+    "critical": 0.6
+  },
+  "memory_usage": {
+    "warning": 0.8,
+    "critical": 0.95
+  },
+  "throughput": {
+    "warning": 10.0,
+    "critical": 5.0
+  }
+}

@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'faq/admin/css/user_history.css' %}">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:dashboard' %}" class="menu-link">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:user_history' %}" class="menu-link active">
+                            <i class="fa-solid fa-users"></i>
+                            <span>User Management</span>
+                        </a>
+                    </li>
+                    <!-- <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:analytics' %}" class="menu-link">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li> -->
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:faq_management' %}" class="menu-link">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                            <span>FAQ Bot Management</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <nav class="top-navbar">
+                <div class="nav-left">
+                    <button class="toggle-sidebar-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">User Management</h1>
+                </div>
+                <div class="nav-right">
+                    <div class="admin-profile">
+                        <div class="admin-info">
+                            <span class="admin-name">{{ request.user.username }}</span>
+                            <span class="admin-role">Administrator</span>
+                        </div>
+                        <div class="admin-avatar">
+                            {{ request.user.username|make_list|first|upper }}
+                        </div>
+                    </div>
+                    <form id="logout-form"
+                        action="{% url 'admin_dashboard:logout' %}?next={% url 'admin_dashboard:login' %}" method="post"
+                        style="display: none;">
+                        {% csrf_token %}
+                    </form>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        class="logout-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Content -->
+            <div class="content-wrapper">
+
+                <!-- Filters -->
+                <form method="get" class="filters-bar">
+                    <div class="form-group">
+                        <input type="text" name="search_email" class="form-control" placeholder="Search by email..."
+                            value="{{ search_email }}">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="date_from" class="form-control" title="From Date"
+                            value="{{ date_from }}">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="date_to" class="form-control" title="To Date" value="{{ date_to }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-filter"></i> Filter
+                    </button>
+                    {% if search_email or date_from or date_to %}
+                    <a href="{% url 'admin_dashboard:user_history' %}" class="btn btn-outline">Clear</a>
+                    {% endif %}
+                </form>
+
+                <!-- Users Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Registered Users</h3>
+                        <span class="badge badge-primary">{{ total_users }} Total</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>User Info</th>
+                                    <th>Session ID</th>
+                                    <th>Registered</th>
+                                    <th>Activity</th>
+                                    <th>Last Active</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user_item in users_data %}
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 500;">
+                                            {{ user_item.decrypted_name|default:"-" }}
+                                        </div>
+                                        <div style="font-size: 0.85rem; color: var(--text-muted);">
+                                            {{ user_item.decrypted_email|default:"-" }}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-warning">{{ user_item.session_id|truncatechars:10
+                                            }}</span>
+                                    </td>
+                                    <td>{{ user_item.created_at|date:"M d, Y" }}</td>
+                                    <td>
+                                        <div style="display: flex; gap: 0.5rem;">
+                                            <span class="badge badge-primary">{{ user_item.request_count|default:0 }}
+                                                req</span>
+                                            <span class="badge badge-success">{{ user_item.response_count|default:0 }}
+                                                res</span>
+                                        </div>
+                                    </td>
+                                    <td>{{ user_item.last_activity|date:"M d, H:i"|default:"-" }}</td>
+                                    <td>
+                                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                            <a href="{% url 'admin_dashboard:conversation_detail' user_item.id %}"
+                                                class="btn btn-sm btn-view-chat">
+                                                <i class="fa-solid fa-eye"></i> View Chat
+                                            </a>
+                                            <a href="#" class="btn-delete-user"
+                                                data-url="{% url 'admin:faq_enduser_delete' user_item.id %}"
+                                                onclick="return deleteUser('{{ user_item.id }}', this.getAttribute('data-url'));"
+                                                title="Delete User">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="6"
+                                        style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                                        No users found matching your filters.
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                {% if users_page.has_other_pages %}
+                <div class="pagination">
+                    {% if users_page.has_previous %}
+                    <a href="?page={{ users_page.previous_page_number }}&search_email={{ search_email }}&date_from={{ date_from }}&date_to={{ date_to }}"
+                        class="page-link"><i class="fa-solid fa-chevron-left"></i></a>
+                    {% else %}
+                    <span class="page-link disabled"><i class="fa-solid fa-chevron-left"></i></span>
+                    {% endif %}
+
+                    {% for i in paginator.page_range %}
+                    {% if users_page.number == i %}
+                    <span class="page-link active">{{ i }}</span>
+                    {% else %}
+                    <a href="?page={{ i }}&search_email={{ search_email }}&date_from={{ date_from }}&date_to={{ date_to }}"
+                        class="page-link">{{ i }}</a>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if users_page.has_next %}
+                    <a href="?page={{ users_page.next_page_number }}&search_email={{ search_email }}&date_from={{ date_from }}&date_to={{ date_to }}"
+                        class="page-link"><i class="fa-solid fa-chevron-right"></i></a>
+                    {% else %}
+                    <span class="page-link disabled"><i class="fa-solid fa-chevron-right"></i></span>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+            </div>
+        </main>
+    </div>
+    <form style="display:none">{% csrf_token %}</form>
+    <script src="{% static 'faq/admin/js/user_history.js' %}"></script>
+</body>
+
+</html>

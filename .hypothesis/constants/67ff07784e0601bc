@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\views.py
+# hypothesis_version: 6.148.7
+
+[201, 400, 404, 409, 'GET', 'POST', 'answer', 'email', 'email required', 'error', 'faq/home.html', 'id', 'keyword', 'keywords', 'name', 'ok', 'q', 'question', 'request not found', 'request_id', 'response', 'results', 'session_id', 'status', 'text', 'text required', 'user not found', 'user_id', 'utf-8']

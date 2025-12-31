@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faqbackend\middleware.py
+# hypothesis_version: 6.148.7
+
+[204, '*', ',', '/admin-dashboard/', 'Content-Type', 'GET', 'GET, POST, OPTIONS', 'HEAD', 'HTTP_USER_AGENT', 'HTTP_X_FORWARDED_FOR', 'LOW', 'MEDIUM', 'OPTIONS', 'REMOTE_ADDR', 'SESSION_TIMEOUT', 'UNAUTHORIZED_ACCESS', 'access_type', 'admin_security', 'automatic_timeout', 'inactivity', 'invalid_session', 'last_activity', 'last_logged_access', 'login_timestamp', 'logout_method', 'max_duration', 'request_count', 'target_path', 'timeout_reason', 'unauthenticated', 'user_agent', 'user_is_staff', 'username']

@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\migrations\0001_initial.py
+# hypothesis_version: 6.148.7
+
+[254, 255, 512, 'BotResponse', 'EndUser', 'FAQEntry', 'ID', 'UserRequest', 'answer', 'created_at', 'email', 'faq.enduser', 'faq.userrequest', 'id', 'keywords', 'name', 'question', 'request', 'requests', 'response', 'session_id', 'text', 'updated_at', 'user']

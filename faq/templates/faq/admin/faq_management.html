@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Management | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'faq/admin/css/faq_management.css' %}">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:dashboard' %}" class="menu-link">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:user_history' %}" class="menu-link">
+                            <i class="fa-solid fa-users"></i>
+                            <span>User Management</span>
+                        </a>
+                    </li>
+                    <!-- <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:analytics' %}" class="menu-link">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li> -->
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:faq_management' %}" class="menu-link active">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                            <span>FAQ Bot Management</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <nav class="top-navbar">
+                <div class="nav-left">
+                    <button class="toggle-sidebar-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">FAQ Knowledge Base</h1>
+                </div>
+                <div class="nav-right">
+                    <div class="admin-profile">
+                        <div class="admin-info">
+                            <span class="admin-name">{{ request.user.username }}</span>
+                            <span class="admin-role">Administrator</span>
+                        </div>
+                        <div class="admin-avatar">
+                            {{ request.user.username|make_list|first|upper }}
+                        </div>
+                    </div>
+                    <form id="logout-form"
+                        action="{% url 'admin_dashboard:logout' %}?next={% url 'admin_dashboard:login' %}" method="post"
+                        style="display: none;">
+                        {% csrf_token %}
+                    </form>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        class="logout-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Content -->
+            <div class="content-wrapper">
+
+                <!-- Actions & Filters -->
+                <div class="filters-bar">
+                    <form onsubmit="return false;" style="display: contents;">
+                        <div class="form-group">
+                            <input type="text" id="search-input" name="search_query" class="form-control"
+                                placeholder="Search questions..." value="{{ search_query }}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="keyword-input" name="keyword_filter" class="form-control"
+                                placeholder="Filter by keyword" value="{{ keyword_filter }}">
+                        </div>
+                        <button type="button" id="filter-btn" class="btn btn-primary">
+                            <i class="fa-solid fa-filter"></i> Filter
+                        </button>
+                        {% if search_query or keyword_filter %}
+                        <a href="{% url 'admin_dashboard:faq_management' %}" class="btn btn-outline">Clear</a>
+                        {% endif %}
+                        <div style="margin-left: auto; display: flex; gap: 0.5rem;">
+                            <a href="#" id="csv-btn" class="btn btn-outline" title="Export CSV">
+                                <i class="fa-solid fa-file-csv"></i> CSV
+                            </a>
+                            <!-- JSON Button Removed -->
+                            <a href="{% url 'admin_dashboard:faq_create' %}" class="btn btn-primary">
+                                <i class="fa-solid fa-plus"></i> Add FAQ
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- FAQ List -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">FAQ Entries ({{ total_faqs }} Total)</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;">#</th>
+                                    <th style="width: 20%;">Question</th>
+                                    <th style="width: 30%;">Answer</th>
+                                    <th style="width: 10%;">Audience</th>
+                                    <th style="width: 10%;">Category</th>
+                                    <th style="width: 10%;">Intent</th>
+                                    <th style="width: 15%;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="faq-table-body">
+                                {% for faq in faq_entries %}
+                                <tr id="faq-row-{{ faq.id }}">
+                                    <td style="color: var(--text-muted); font-weight: 500;">
+                                        {% if faq_entries.start_index %}{{ faq_entries.start_index|add:forloop.counter0}}{% else %}{{ forloop.counter }}{% endif %}
+                                    </td>
+                                    <td class="faq-question" title="{{ faq.question }}">'{{ faq.question|truncatechars:60 }}</td>
+                                    <td>
+                                        <div class="faq-answer" title="{{ faq.answer }}">{{ faq.answer|truncatechars:100 }}</div>
+                                    </td>
+                                    <td><span class="badge badge-primary">{{ faq.audience }}</span></td>
+                                    <td><span class="badge badge-info">{{ faq.category }}</span></td>
+                                    <td><span class="badge badge-secondary">{{ faq.intent }}</span></td>
+                                    <td>
+                                        <div style="display: flex; gap: 0.5rem;">
+                                            <a href="{% url 'admin_dashboard:faq_edit' faq.id %}"
+                                                class="btn btn-sm btn-outline" title="Edit">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                            <button onclick="deleteFAQ('{{ faq.id }}')" class="btn btn-sm btn-outline"
+                                                style="color: var(--danger); border-color: var(--danger);"
+                                                title="Delete">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="5"
+                                        style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                                        No FAQ entries found.
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                {% if faq_entries.has_other_pages %}
+                <div class="pagination">
+                    {% if faq_entries.has_previous %}
+                    <a href="?page={{ faq_entries.previous_page_number }}&search_query={{ search_query }}"
+                        class="page-link"><i class="fa-solid fa-chevron-left"></i></a>
+                    {% else %}
+                    <span class="page-link disabled"><i class="fa-solid fa-chevron-left"></i></span>
+                    {% endif %}
+
+                    {% for i in paginator.page_range %}
+                    {% if faq_entries.number == i %}
+                    <span class="page-link active">{{ i }}</span>
+                    {% else %}
+                    <a href="?page={{ i }}&search_query={{ search_query }}" class="page-link">{{ i }}</a>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if faq_entries.has_next %}
+                    <a href="?page={{ faq_entries.next_page_number }}&search_query={{ search_query }}"
+                        class="page-link"><i class="fa-solid fa-chevron-right"></i></a>
+                    {% else %}
+                    <span class="page-link disabled"><i class="fa-solid fa-chevron-right"></i></span>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </main>
+    </div>
+    <script src="{% static 'faq/admin/js/faq_management.js' %}"></script>
+</body>
+
+</html>

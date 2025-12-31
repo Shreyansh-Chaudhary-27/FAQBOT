@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\admin_urls.py
+# hypothesis_version: 6.148.7
+
+['admin_dashboard', 'conversation_detail', 'dashboard', 'faq/', 'faq_management', 'login', 'login/', 'logout', 'logout/', 'user_history', 'users/', 'users/<int:user_id>/']

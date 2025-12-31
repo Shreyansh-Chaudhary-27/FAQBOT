@@ -1,0 +1,8 @@
+{
+  "auto_retrain_enabled": true,
+  "confidence_threshold": 0.6,
+  "feedback_threshold": 3.0,
+  "min_data_points": 100,
+  "retrain_interval_days": 7,
+  "performance_decline_threshold": 0.1
+}

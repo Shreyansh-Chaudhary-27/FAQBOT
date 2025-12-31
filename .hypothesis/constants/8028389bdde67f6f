@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\migrations\0002_auditlog.py
+# hypothesis_version: 6.148.7
+
+[255, '-created_at', '0001_initial', 'Admin Login', 'Admin Logout', 'AuditLog', 'CRITICAL', 'Critical', 'DATA_ACCESS', 'DECRYPTION', 'Data Access', 'Decryption Operation', 'ENCRYPTION', 'Encryption Operation', 'HIGH', 'High', 'ID', 'LOGIN', 'LOGOUT', 'LOW', 'Low', 'MEDIUM', 'Medium', 'SECURITY_VIOLATION', 'SESSION_TIMEOUT', 'Security Violation', 'Session Timeout', 'UNAUTHORIZED_ACCESS', 'admin_user', 'context_data', 'created_at', 'description', 'event_type', 'faq', 'id', 'indexes', 'ip_address', 'ordering', 'request_method', 'request_path', 'severity', 'user_agent']

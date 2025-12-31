@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="{% static 'faq/admin/css/dashboard.css' %}">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:dashboard' %}" class="menu-link active">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:user_history' %}" class="menu-link">
+                            <i class="fa-solid fa-users"></i>
+                            <span>User Management</span>
+                        </a>
+                    </li>
+                    <!-- <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:analytics' %}" class="menu-link">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li> -->
+                    <li class="menu-item">
+                        <a href="{% url 'admin_dashboard:faq_management' %}" class="menu-link">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                            <span>FAQ Bot Management</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <nav class="top-navbar">
+                <div class="nav-left">
+                    <button class="toggle-sidebar-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Dashboard Overview</h1>
+                </div>
+                <div class="nav-right">
+                    <div class="admin-profile">
+                        <div class="admin-info">
+                            <span class="admin-name">{{ request.user.username }}</span>
+                            <span class="admin-role">Administrator</span>
+                        </div>
+                        <div class="admin-avatar">
+                            {{ request.user.username|make_list|first|upper }}
+                        </div>
+                    </div>
+                    <form id="logout-form"
+                        action="{% url 'admin_dashboard:logout' %}?next={% url 'admin_dashboard:login' %}" method="post"
+                        style="display: none;">
+                        {% csrf_token %}
+                    </form>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        class="logout-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Content -->
+            <div class="content-wrapper">
+
+                <!-- System Health Chart Data (Hidden) -->
+                <div id="chart-data" data-total-users="{{ total_users }}" data-total-requests="{{ total_requests }}"
+                    data-total-responses="{{ total_responses }}" data-pending-requests="{{ pending_requests }}"
+                    data-recent-requests="{{ recent_requests }}" data-recent-responses="{{ recent_responses }}"
+                    style="display: none;"></div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <!-- Total Users -->
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">{{ total_users }}</div>
+                            <div class="stat-label">Total Users</div>
+                        </div>
+                        <div class="stat-footer">
+                            <a href="{% url 'admin_dashboard:user_history' %}" class="stat-link">
+                                View Users <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Total Interactions -->
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon" style="color: var(--success); background-color: #d1fae5;">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">{{ total_requests }}</div>
+                            <div class="stat-label">Total Interactions</div>
+                        </div>
+                        <div class="stat-footer">
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">{{ recent_requests }} in last 7
+                                days</span>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Count -->
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon" style="color: var(--warning); background-color: #fef3c7;">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">{{ total_faqs }}</div>
+                            <div class="stat-label">FAQ Entries</div>
+                        </div>
+                        <div class="stat-footer">
+                            <a href="{% url 'admin_dashboard:faq_management' %}" class="stat-link">
+                                Manage FAQs <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pending Requests -->
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon" style="color: var(--danger); background-color: #fee2e2;">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                            </div>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">{{ pending_requests }}</div>
+                            <div class="stat-label">Pending / No Response</div>
+                        </div>
+                        <div class="stat-footer">
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Action required</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="card-title">Weekly Activity (Requests vs Responses)</h3>
+                        </div>
+                        <div style="height: 300px;">
+                            <canvas id="activityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="card-title">Response Status</h3>
+                        </div>
+                        <div style="height: 300px;">
+                            <canvas id="statusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity / Active Users -->
+                <div class="card active-users-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fa-solid fa-fire"
+                                style="color: #f59e0b; margin-right: 8px;"></i> Most Active Users</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Sessions</th>
+                                    <th>Last Active</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in active_users %}
+                                <tr>
+                                    <td style="font-weight: 500;">
+                                        <div class="user-avatar-small">{{ user.decrypted_name|make_list|first|upper }}
+                                        </div>
+                                        {% if user.decrypted_name %}{{ user.decrypted_name }}{% else %}User #{{ user.id
+                                        }}{% endif %}
+                                    </td>
+                                    <td>
+                                        {% if user.decrypted_email %}{{ user.decrypted_email }}{% else %}N/A{% endif %}
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-primary">{{ user.request_count }} interactions</span>
+                                    </td>
+                                    <td>{{ user.requests.last.created_at|date:"M d, Y H:i" }}</td>
+                                    <td>
+                                        <a href="{% url 'admin_dashboard:conversation_detail' user.id %}"
+                                            class="btn btn-sm btn-view-chat">
+                                            <i class="fa-solid fa-eye"></i> View Chat
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="5"
+                                        style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                                        No active users found.
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Page Specific JS -->
+    <script src="{% static 'faq/admin/js/dashboard.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+2025-12-22 11:35:29,247 - INFO - Generating response for query_id=None | question_len=32 | context_len=0
+2025-12-22 11:35:31,367 - INFO - Response generated | length=48 | time=2.12s
+2025-12-22 11:36:49,109 - INFO - Generating response for query_id=6353b631-85e5-4de7-bea4-80c06f001048 | question_len=32 | context_len=0
+2025-12-22 11:36:51,228 - INFO - Response generated | length=48 | time=2.12s
+2025-12-22 11:50:15,150 - INFO - Generating response for query_id=None | question_len=32 | context_len=3
+2025-12-22 11:50:17,050 - INFO - Response generated | length=48 | time=1.90s
+2025-12-22 11:50:47,852 - INFO - Generating response for query_id=bd47a197-fc35-4948-a491-678fa40a5499 | question_len=32 | context_len=3
+2025-12-22 11:50:50,058 - INFO - Response generated | length=48 | time=2.21s
+2025-12-22 11:52:16,337 - INFO - Generating response for query_id=eb6154bc-aa29-46ee-9d5a-6e2bf5cdda00 | question_len=32 | context_len=3
+2025-12-22 11:52:18,709 - INFO - Response generated | length=48 | time=2.37s
+2025-12-22 11:52:43,448 - INFO - Generating response for query_id=413b3d40-b9e0-4bdb-a3a7-0be697aa1d7e | question_len=32 | context_len=3
+2025-12-22 11:52:45,430 - INFO - Response generated | length=48 | time=1.98s
+2025-12-22 11:53:58,042 - INFO - Generating response for query_id=c5f31575-2cd7-4e12-8936-3b9fd49e7b44 | question_len=32 | context_len=3
+2025-12-22 11:54:00,308 - INFO - Response generated | length=48 | time=2.27s
+2025-12-22 11:56:01,391 - INFO - Generating response for query_id=1b137d40-4e81-446d-9fda-2a73d1dd0bc8 | question_len=32 | context_len=3
+2025-12-22 11:56:03,012 - INFO - Response generated | length=48 | time=1.62s
+2025-12-22 11:56:10,375 - INFO - Generating response for query_id=05a22de7-18d4-4469-b07e-4a42dd81df4f | question_len=32 | context_len=3
+2025-12-22 11:56:12,124 - INFO - Response generated | length=48 | time=1.75s
+2025-12-22 11:56:50,696 - INFO - Generating response for query_id=d44a7143-aee8-4b80-bbdd-08e57bf1d7d4 | question_len=35 | context_len=5
+2025-12-22 11:56:53,059 - INFO - Response generated | length=48 | time=2.36s
+2025-12-22 11:57:24,849 - INFO - Generating response for query_id=73d5145e-a385-4203-b83b-a59c870c3e8c | question_len=32 | context_len=3
+2025-12-22 11:57:27,264 - INFO - Response generated | length=48 | time=2.42s
+2025-12-22 11:58:19,347 - INFO - Generating response for query_id=d6f099d1-f5f5-4b2b-9755-ed05affadf14 | question_len=32 | context_len=3
+2025-12-22 11:58:21,380 - INFO - Response generated | length=48 | time=2.03s
+2025-12-22 12:04:23,755 - INFO - Generating response for query_id=None | question_len=32 | context_len=3
+2025-12-22 12:04:23,755 - ERROR - RAG response generation failed for query_id=None: 'BasicResponseGenerator' object has no attribute 'config'
+2025-12-22 12:05:06,515 - INFO - Generating response for query_id=None | question_len=32 | context_len=3
+2025-12-22 12:05:08,751 - INFO - Response generated | length=48 | time=2.24s
+2025-12-22 12:07:27,232 - INFO - Generating response for query_id=6f76834b-44f8-4616-aed0-fc804b278820 | question_len=32 | context_len=3
+2025-12-22 12:07:29,487 - INFO - Response generated | length=48 | time=2.26s
+2025-12-22 12:07:36,609 - INFO - Generating response for query_id=cec1a721-bbd5-4179-ae38-0d220fd4afd6 | question_len=35 | context_len=5
+2025-12-22 12:07:39,290 - INFO - Response generated | length=48 | time=2.68s
+2025-12-22 12:30:42,588 - INFO - Generating response for query_id=82672243-c78f-42dd-8617-9ec82e737689 | question_len=32 | context_len=3
+2025-12-22 12:30:44,192 - INFO - Response generated | length=48 | time=1.60s
+2025-12-22 12:32:37,106 - INFO - Generating response for query_id=8d903cb3-df8e-460e-b7b2-d4d0c2242e2c | question_len=35 | context_len=5
+2025-12-22 12:32:38,812 - INFO - Response generated | length=48 | time=1.71s
+2025-12-22 12:34:32,928 - INFO - Generating response for query_id=3a55ffa6-c6e8-4fba-a753-2119deda80a8 | question_len=35 | context_len=5
+2025-12-22 12:34:34,785 - INFO - Response generated | length=48 | time=1.86s
+2025-12-22 12:35:21,894 - INFO - Generating response for query_id=c616e50a-668c-417d-a7b1-c134bb3074b5 | question_len=14 | context_len=10
+2025-12-22 12:35:23,296 - INFO - Response generated | length=48 | time=1.40s
+2025-12-22 12:36:13,538 - INFO - Generating response for query_id=a7f468a4-62ca-41a9-8a43-5661939ad14c | question_len=11 | context_len=2
+2025-12-22 12:36:15,026 - INFO - Response generated | length=48 | time=1.49s
+2025-12-22 12:36:34,659 - INFO - Generating response for query_id=3338f3f0-3ed3-4c0f-a0b4-aec88c17a144 | question_len=15 | context_len=2
+2025-12-22 12:36:36,106 - INFO - Response generated | length=48 | time=1.45s
+2025-12-22 12:38:40,730 - INFO - Generating response for query_id=7eecadc1-b7bd-4d27-b953-b5944457447b | question_len=32 | context_len=10
+2025-12-22 12:38:42,591 - INFO - Response generated | length=48 | time=1.86s
+2025-12-22 12:40:09,105 - INFO - Generating response for query_id=691685da-a3f4-49c2-8799-457a5e648ce1 | question_len=42 | context_len=10
+2025-12-22 12:40:10,655 - INFO - Response generated | length=48 | time=1.55s
+2025-12-22 12:46:20,951 - INFO - Generating response for query_id=54e95403-d827-4570-be09-6cf8d4a5df2b | question_len=32 | context_len=3
+2025-12-22 12:46:22,776 - INFO - Response generated | length=48 | time=1.82s
+2025-12-22 12:58:47,694 - INFO - Generating response for query_id=cc928b9f-eaf2-48ad-995c-02a2ce700ad3 | question_len=26 | context_len=10
+2025-12-22 12:58:49,084 - INFO - Response generated | length=48 | time=1.39s
+2025-12-22 13:03:53,196 - INFO - Generating response for query_id=b9fa9588-d7f8-4161-9083-5890938f56af | question_len=15 | context_len=10
+2025-12-22 13:03:54,993 - INFO - Response generated | length=48 | time=1.80s
+2025-12-22 13:04:39,005 - INFO - Generating response for query_id=f1151939-3e3b-462a-abc5-21c6f5fbbefd | question_len=26 | context_len=10
+2025-12-22 13:04:40,905 - INFO - Response generated | length=48 | time=1.90s
+2025-12-22 13:05:26,182 - INFO - Generating response for query_id=1ae0810a-2794-477a-8c5f-b2505e01a25f | question_len=26 | context_len=10
+2025-12-22 13:05:28,255 - INFO - Response generated | length=48 | time=2.07s
+2025-12-22 13:16:27,852 - INFO - Generating response for query_id=78575f7c-792c-433b-b3bf-278a5d13e52e | question_len=26 | context_len=10
+2025-12-22 13:16:29,427 - INFO - Response generated | length=48 | time=1.57s
+2025-12-22 13:19:20,550 - INFO - Generating response for query_id=fd47b822-3984-46e1-88f7-6b66b508b6cb | question_len=26 | context_len=10
+2025-12-22 13:19:21,945 - INFO - Response generated | length=48 | time=1.39s
+2025-12-22 13:21:38,479 - INFO - Generating response for query_id=73e65f23-c167-47ff-a6ba-04ada627b2b4 | question_len=25 | context_len=2
+2025-12-22 13:21:39,956 - INFO - Response generated | length=48 | time=1.48s
+2025-12-22 13:25:00,029 - INFO - Generating response for query_id=4f232cd2-05ee-47ce-ae3b-df87064f8a5d | question_len=37 | context_len=0
+2025-12-22 13:25:01,911 - INFO - Response generated | length=48 | time=1.88s
+2025-12-25 23:22:36,417 - INFO - Generating response for query_id=None | question_len=33 | context_len=1
+2025-12-25 23:22:37,023 - INFO - Response generated | length=48 | time=0.61s
+2025-12-26 00:09:18,309 - INFO - Generating response for query_id=None | question_len=16 | context_len=3
+2025-12-26 00:09:18,630 - INFO - Response generated | length=48 | time=0.32s
+2025-12-26 00:11:20,021 - INFO - Generating response for query_id=None | question_len=31 | context_len=10
+2025-12-26 00:11:20,284 - INFO - Response generated | length=48 | time=0.26s
+2025-12-26 00:15:15,908 - INFO - Generating response for query_id=None | question_len=31 | context_len=10
+2025-12-26 00:15:16,210 - INFO - Response generated | length=48 | time=0.30s
+2025-12-26 00:20:15,976 - INFO - Generating response for query_id=313e977c-4e54-4bf8-9c2a-97af00eed84e | question_len=32 | context_len=1
+2025-12-26 00:20:16,625 - INFO - Response generated | length=48 | time=0.65s
+2025-12-27 21:13:51,073 - INFO - Generating response for query_id=5c519ead-cd1d-4ea6-8bc5-d71d6d34af8d | question_len=32 | context_len=1
+2025-12-27 21:13:52,542 - INFO - Response generated | length=48 | time=1.46s
+2025-12-27 21:27:46,537 - INFO - Generating response for query_id=5a7f7805-401c-4a58-aaa9-8d937fb3c341 | question_len=3 | context_len=0
+2025-12-27 21:27:47,885 - INFO - Response generated | length=15 | time=1.33s
+2025-12-27 21:28:05,900 - INFO - Generating response for query_id=d8238d7b-a5ee-475a-a03b-acfa6faeb3d6 | question_len=15 | context_len=4
+2025-12-27 21:28:07,237 - INFO - Response generated | length=321 | time=1.34s
+2025-12-27 21:28:26,549 - INFO - Generating response for query_id=07bf5509-5343-44d0-adf9-aec6501fb0d8 | question_len=15 | context_len=4
+2025-12-27 21:28:27,740 - INFO - Response generated | length=208 | time=1.19s
+2025-12-27 21:30:23,838 - INFO - Generating response for query_id=a52b26ec-0f4b-46e5-ac30-5652d8cf05f1 | question_len=27 | context_len=1
+2025-12-27 21:30:25,186 - INFO - Response generated | length=89 | time=1.35s
+2025-12-27 21:30:51,462 - INFO - Generating response for query_id=c4f91732-5fab-41dd-8a4a-2bc3822dad56 | question_len=23 | context_len=1
+2025-12-27 21:30:52,499 - INFO - Response generated | length=15 | time=1.04s
+2025-12-27 21:31:00,887 - INFO - Generating response for query_id=17514071-4901-492b-b450-4ec6a405e744 | question_len=25 | context_len=1
+2025-12-27 21:31:02,042 - INFO - Response generated | length=102 | time=1.16s
+2025-12-27 21:31:14,084 - INFO - Generating response for query_id=56b475b6-3c46-4833-878d-655ae893a905 | question_len=35 | context_len=5
+2025-12-27 21:31:15,290 - INFO - Response generated | length=112 | time=1.21s
+2025-12-27 21:34:05,691 - INFO - Generating response for query_id=e84fcf67-dd69-4eeb-9d01-75055d5d5641 | question_len=32 | context_len=4
+2025-12-27 21:34:06,882 - INFO - Response generated | length=59 | time=1.19s
+2025-12-27 21:34:56,657 - INFO - Generating response for query_id=902abeee-c26f-440d-85ab-f37472b0ce56 | question_len=33 | context_len=1
+2025-12-27 21:34:57,446 - INFO - Response generated | length=61 | time=0.79s
+2025-12-27 21:50:43,686 - INFO - Generating response for query_id=03a81557-1ae4-4763-93c9-8ad3bbdf34e3 | question_len=5 | context_len=0
+2025-12-27 21:50:45,752 - INFO - Response generated | length=15 | time=2.02s
+2025-12-27 21:58:45,802 - INFO - Generating response for query_id=71937caf-e011-449e-8055-67382c9e5d8f | question_len=35 | context_len=5
+2025-12-27 21:58:46,987 - INFO - Response generated | length=112 | time=1.18s
+2025-12-30 13:46:39,074 - INFO - Generating response for query_id=bb47beb9-59f6-48a9-826f-ffbff8118d2e | question_len=34 | context_len=2
+2025-12-30 13:46:41,192 - INFO - Response generated | length=15 | time=2.11s
+2025-12-30 13:47:20,901 - INFO - Generating response for query_id=61f1f950-3a1e-4c1b-9e33-fd22479dd141 | question_len=32 | context_len=4
+2025-12-30 13:47:22,121 - INFO - Response generated | length=59 | time=1.22s
+2025-12-30 13:49:59,714 - INFO - Generating response for query_id=c7561bd6-f415-430d-90ae-398f872e82d4 | question_len=37 | context_len=1
+2025-12-30 13:50:01,030 - INFO - Response generated | length=110 | time=1.32s
+2025-12-30 13:50:03,283 - INFO - Generating response for query_id=4d735878-4207-4230-9cad-4f8d95010a22 | question_len=25 | context_len=3
+2025-12-30 13:50:04,617 - INFO - Response generated | length=135 | time=1.33s
+2025-12-30 13:50:07,698 - INFO - Generating response for query_id=7a3ba3a6-24cd-447a-bb06-c66e4155a645 | question_len=34 | context_len=2
+2025-12-30 13:50:08,797 - INFO - Response generated | length=15 | time=1.10s
+2025-12-30 13:50:16,289 - INFO - Generating response for query_id=ca035ab5-8b42-469d-ab37-c41f036eaf0a | question_len=22 | context_len=2
+2025-12-30 13:50:17,452 - INFO - Response generated | length=70 | time=1.16s
+2025-12-30 13:50:19,422 - INFO - Generating response for query_id=97a8a8fe-1c54-45a8-b4b9-e4131670dc38 | question_len=30 | context_len=3
+2025-12-30 13:50:20,255 - INFO - Response generated | length=62 | time=0.83s
+2025-12-30 13:50:22,183 - INFO - Generating response for query_id=10bdc2dc-216f-40f9-92c6-0fd1d4d87179 | question_len=26 | context_len=0
+2025-12-30 13:50:23,343 - INFO - Response generated | length=33 | time=1.16s
+2025-12-30 14:01:15,032 - INFO - Generating response for query_id=b1bafa7d-253a-43a4-a23e-8342a5c326a4 | question_len=26 | context_len=5
+2025-12-30 14:01:16,169 - INFO - Response generated | length=44 | time=1.14s
+2025-12-30 14:02:22,222 - INFO - Generating response for query_id=15b4fbd2-9841-4baa-9356-83739cdb02fe | question_len=26 | context_len=5
+2025-12-30 14:02:23,406 - INFO - Response generated | length=44 | time=1.18s
+2025-12-30 14:03:04,921 - INFO - Generating response for query_id=e6727dfb-89f1-4d4f-bc25-9b408b7e5e02 | question_len=15 | context_len=4
+2025-12-30 14:03:05,895 - INFO - Response generated | length=208 | time=0.97s
+2025-12-30 14:08:04,351 - INFO - Generating response for query_id=e6530188-b5a9-43c1-83d7-cd7bc8ee4b24 | question_len=14 | context_len=0
+2025-12-30 14:08:05,462 - INFO - Response generated | length=15 | time=1.11s
+2025-12-30 14:10:52,221 - INFO - Generating response for query_id=e33de2a6-52d8-4a87-83f9-0f2cff0515f1 | question_len=26 | context_len=5
+2025-12-30 14:10:53,375 - INFO - Response generated | length=44 | time=1.15s
+2025-12-30 14:11:02,844 - INFO - Generating response for query_id=a11fcadc-c601-49f8-9a40-31ad920f2e1a | question_len=15 | context_len=4
+2025-12-30 14:11:04,227 - INFO - Response generated | length=321 | time=1.38s
+2025-12-30 14:11:23,560 - INFO - Generating response for query_id=befcd072-1af0-4119-93bd-b47a39fd03ae | question_len=26 | context_len=5
+2025-12-30 14:11:24,356 - INFO - Response generated | length=44 | time=0.80s
+2025-12-30 14:12:47,733 - INFO - Generating response for query_id=60c5e353-395d-42bd-a88e-749fe747f334 | question_len=26 | context_len=5
+2025-12-30 14:12:48,516 - INFO - Response generated | length=44 | time=0.78s
+2025-12-30 14:12:58,544 - INFO - Generating response for query_id=0f8d6492-e5ad-4ae7-a641-bf5bb2e8ec14 | question_len=12 | context_len=0
+2025-12-30 14:12:59,722 - INFO - Response generated | length=15 | time=1.18s
+2025-12-30 14:13:05,059 - INFO - Generating response for query_id=9fb8f06d-4afd-4974-876a-d8b6fa8e32f8 | question_len=12 | context_len=0
+2025-12-30 14:13:06,261 - INFO - Response generated | length=15 | time=1.20s
+2025-12-30 14:13:15,497 - INFO - Generating response for query_id=5312fdd9-b422-4548-93d8-46327c5ad9b1 | question_len=3 | context_len=0
+2025-12-30 14:13:16,427 - INFO - Response generated | length=15 | time=0.93s
+2025-12-30 14:13:19,152 - INFO - Generating response for query_id=e0c2ec0e-0345-4b2b-8b92-8c4ab6e5f934 | question_len=3 | context_len=0
+2025-12-30 14:13:20,026 - INFO - Response generated | length=15 | time=0.87s
+2025-12-30 14:14:11,250 - INFO - Generating response for query_id=93d8a5ed-700e-40ba-96e3-4808688e2cc0 | question_len=28 | context_len=1
+2025-12-30 14:14:12,564 - INFO - Response generated | length=146 | time=1.31s
+2025-12-30 14:19:20,770 - INFO - Generating response for query_id=a333f032-2aa6-46a6-b8ee-f22081ec5e73 | question_len=14 | context_len=0
+2025-12-30 14:19:21,837 - INFO - Response generated | length=15 | time=1.07s
+2025-12-30 14:19:42,512 - INFO - Generating response for query_id=bc094d5a-7e83-4349-8d57-1efbad1b0ed4 | question_len=26 | context_len=5
+2025-12-30 14:19:43,702 - INFO - Response generated | length=44 | time=1.19s
+2025-12-30 14:20:29,639 - INFO - Generating response for query_id=83499382-b30e-4a86-aae3-5f40dd5a9ba0 | question_len=48 | context_len=4
+2025-12-30 14:20:30,912 - INFO - Response generated | length=104 | time=1.27s
+2025-12-30 14:21:03,048 - INFO - Generating response for query_id=5f7194b1-ee79-49d5-b796-4f8f119d472e | question_len=22 | context_len=1
+2025-12-30 14:21:04,271 - INFO - Response generated | length=152 | time=1.22s
+2025-12-30 14:21:50,174 - INFO - Generating response for query_id=f36d9d00-0d62-4ed6-987e-f7998f4c260d | question_len=15 | context_len=1
+2025-12-30 14:21:51,160 - INFO - Response generated | length=154 | time=0.99s
+2025-12-30 14:21:59,429 - INFO - Generating response for query_id=2d5e0a8a-ff7f-44a0-baea-cab4a8da9b1d | question_len=50 | context_len=7
+2025-12-30 14:22:00,671 - INFO - Response generated | length=120 | time=1.24s
+2025-12-30 19:50:28,986 - INFO - Generating response for query_id=199bfa6a-60bc-4d68-a6d5-8a781eff3c34 | question_len=32 | context_len=3
+2025-12-30 19:50:30,673 - INFO - Response generated | length=37 | time=1.67s
+2025-12-30 19:52:32,567 - INFO - Generating response for query_id=2ccb33f3-9ede-4152-b3c8-5a54f4fda938 | question_len=20 | context_len=1
+2025-12-30 19:52:33,805 - INFO - Response generated | length=164 | time=1.24s
+2025-12-30 21:37:50,894 - INFO - Generating response for query_id=92956a5c-d974-4869-9560-eaee7d7e0611 | question_len=32 | context_len=1
+2025-12-30 21:37:52,926 - INFO - Response generated | length=153 | time=2.02s
+2025-12-31 12:05:02,598 - INFO - Generating response for query_id=ee21d0c9-0152-412e-a730-891f4e3f56d2 | question_len=32 | context_len=1
+2025-12-31 12:05:04,876 - INFO - Response generated | length=153 | time=2.27s
+2025-12-31 12:05:08,273 - INFO - Generating response for query_id=69292c6e-c266-455b-af38-e1d7587e069c | question_len=35 | context_len=5
+2025-12-31 12:05:09,461 - INFO - Response generated | length=90 | time=1.19s
+2025-12-31 12:37:20,662 - INFO - Generating response for query_id=db9ae369-0df6-418e-89be-3a13286fafe9 | question_len=32 | context_len=1
+2025-12-31 12:37:23,119 - INFO - Response generated | length=153 | time=2.46s
+2025-12-31 12:37:34,112 - INFO - Generating response for query_id=73406b9f-9d85-46c5-bde3-aea4444cb94f | question_len=35 | context_len=5
+2025-12-31 12:37:35,035 - INFO - Response generated | length=88 | time=0.92s
+2025-12-31 12:37:36,675 - INFO - Generating response for query_id=23da4523-6c26-4627-b8a2-b06e3709597f | question_len=32 | context_len=4
+2025-12-31 12:37:37,535 - INFO - Response generated | length=59 | time=0.86s
+2025-12-31 12:37:41,489 - INFO - Generating response for query_id=fb0c854a-f675-4c88-bab8-66623dd73059 | question_len=32 | context_len=1
+2025-12-31 12:37:42,962 - INFO - Response generated | length=153 | time=1.47s

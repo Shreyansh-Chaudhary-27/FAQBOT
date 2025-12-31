@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\models.py
+# hypothesis_version: 6.148.7
+
+[255, 512, ',', '-created_at', 'Admin Login', 'Admin Logout', 'Anonymous', 'CRITICAL', 'Critical', 'DATA_ACCESS', 'DECRYPTION', 'Data Access', 'Decryption Operation', 'ENCRYPTION', 'Encryption Operation', 'HIGH', 'HTTP_USER_AGENT', 'HTTP_X_FORWARDED_FOR', 'High', 'LOGIN', 'LOGOUT', 'LOW', 'Low', 'MEDIUM', 'Medium', 'REMOTE_ADDR', 'SECURITY_VIOLATION', 'SESSION_TIMEOUT', 'Security Violation', 'Session Timeout', 'UNAUTHORIZED_ACCESS', 'admin_user', 'created_at', 'event_type', 'ip_address', 'requests', 'response', 'severity']

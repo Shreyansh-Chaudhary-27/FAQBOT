@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\audit_middleware.py
+# hypothesis_version: 6.148.7
+
+['/admin-dashboard/', 'DATA_ACCESS', 'LOW', 'access_method', 'admin_user', 'data_accessed', 'model_property', 'request']

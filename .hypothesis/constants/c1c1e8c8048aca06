@@ -1,0 +1,4 @@
+# file: C:\gargi\backend\faq\admin.py
+# hypothesis_version: 6.148.7
+
+['answer', 'created_at', 'email', 'id', 'keywords', 'name', 'question', 'request', 'request__user__email', 'session_id', 'text', 'updated_at', 'user', 'user__email']

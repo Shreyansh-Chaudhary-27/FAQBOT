@@ -1,0 +1,145 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at 20% 20%, rgba(108,75,255,0.08), transparent 35%),
+                radial-gradient(circle at 80% 0%, rgba(255,111,97,0.08), transparent 30%),
+                linear-gradient(145deg, #0e1324 0%, #121a32 40%, #0b0f1f 100%);
+    min-height: 100vh;
+    color: #e9ecf5;
+}
+
+/* Header */
+.simple-header {
+    background: rgba(15,19,36,0.85);
+    padding: 20px 40px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    text-align: center;
+    border-bottom: 1px solid #1f2945;
+    backdrop-filter: blur(8px);
+}
+
+.logo h1 {
+    color: #e9ecf5;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.site-logo {
+    width: 180px;
+    max-width: 60vw;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.logo p {
+    color: #9aa5c4;
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.demo-section {
+    background: #121a32;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+    text-align: center;
+    border: 1px solid #1f2945;
+}
+
+.demo-section h2 {
+    color: #e9ecf5;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.demo-section > p {
+    font-size: 1.1rem;
+    color: #9aa5c4;
+    margin-bottom: 40px;
+}
+
+/* Test Questions */
+.test-questions {
+    background: #0e1324;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    text-align: left;
+    border: 1px solid #1f2945;
+}
+
+.test-questions h3 {
+    color: #e9ecf5;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.test-questions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.test-questions li {
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: #121a32;
+    border-left: 4px solid #6c4bff;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.test-questions li:hover {
+    transform: translateX(5px);
+    background: #162040;
+}
+
+/* Instructions */
+.instructions {
+    background: #0e1324;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: left;
+    margin-top: 30px;
+    border: 1px solid #1f2945;
+}
+
+.instructions h3 {
+    color: #6c4bff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.instructions p {
+    padding: 8px 0;
+    color: #9aa5c4;
+}
+
+/* Footer */
+.simple-footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(15,19,36,0.85);
+    margin-top: 40px;
+    color: #9aa5c4;
+    font-size: 14px;
+    border-top: 1px solid #1f2945;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .simple-header { padding: 15px 20px; }
+    .demo-section { padding: 20px; }
+    .demo-section h2 { font-size: 1.8rem; }
+}
