@@ -42,7 +42,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['testserver', 'localhost', '127.0.0.1']
 ALLOWED_HOSTS = [
-    'chatbot-1q9l.onrender.com',
+    'faqbot-lkh9.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
