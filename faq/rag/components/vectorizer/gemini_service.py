@@ -7,14 +7,11 @@ and natural language processing tasks within the RAG system.
 
 import logging
 import time
-import warnings
 from typing import List, Optional, Dict, Any
 import numpy as np
 
-# Suppress deprecation warning - we're migrating to google.genai
-warnings.filterwarnings('ignore', category=FutureWarning, module='google.generativeai')
-
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from google.api_core import exceptions as google_exceptions
 
 from faq.rag.config.settings import rag_config
@@ -45,10 +42,10 @@ class GeminiEmbeddingService:
         self.retry_delay = 1.0  # seconds
         self.rate_limit_delay = 60.0  # seconds for rate limiting
         
-        # Configure Gemini AI
+        # Configure Gemini AI Client
         try:
-            genai.configure(api_key=self.config['api_key'])
-            logger.info(f"Gemini AI configured with model: {self.embedding_model}")
+            self.client = genai.Client(api_key=self.config['api_key'])
+            logger.info(f"Gemini AI Client configured for model: {self.embedding_model}")
         except Exception as e:
             logger.error(f"Failed to configure Gemini AI: {e}")
             raise GeminiServiceError(f"Gemini AI configuration failed: {e}")
@@ -78,44 +75,39 @@ class GeminiEmbeddingService:
             try:
                 logger.debug(f"Generating embedding for text (attempt {attempt + 1}): {text[:100]}...")
                 
-                # Generate embedding using Gemini
-                response = genai.embed_content(
+                # Generate embedding using Gemini Client
+                # Map task_type string to SDK enum or string if necessary, usually strings work
+                response = self.client.models.embed_content(
                     model=self.embedding_model,
-                    content=text,
-                    task_type=task_type
+                    contents=text,
+                    config=types.EmbedContentConfig(task_type=task_type)
                 )
                 
-                if response.embedding and len(response.embedding) > 0:
-                    embedding = np.array(response.embedding, dtype=np.float32)
+                # Accessing embedding from the response object
+                # New SDK format: response.embeddings[0].values
+                if response.embeddings and len(response.embeddings) > 0:
+                    embedding_values = response.embeddings[0].values
+                    embedding = np.array(embedding_values, dtype=np.float32)
                     logger.debug(f"Successfully generated embedding with dimension: {len(embedding)}")
                     return embedding
                 else:
                     raise GeminiServiceError("Empty embedding returned from Gemini AI")
                     
-            except google_exceptions.ResourceExhausted as e:
-                logger.warning(f"Rate limit exceeded (attempt {attempt + 1}): {e}")
-                if attempt < self.max_retries - 1:
-                    time.sleep(self.rate_limit_delay)
-                    continue
-                else:
-                    raise GeminiServiceError(f"Rate limit exceeded after {self.max_retries} attempts")
-                    
-            except google_exceptions.InvalidArgument as e:
-                logger.error(f"Invalid argument for embedding generation: {e}")
-                raise GeminiServiceError(f"Invalid input for embedding: {e}")
-                
-            except google_exceptions.GoogleAPIError as e:
-                logger.warning(f"Google API error (attempt {attempt + 1}): {e}")
-                if attempt < self.max_retries - 1:
-                    time.sleep(self.retry_delay * (2 ** attempt))  # Exponential backoff
-                    continue
-                else:
-                    raise GeminiServiceError(f"Google API error after {self.max_retries} attempts: {e}")
-                    
             except Exception as e:
-                logger.error(f"Unexpected error during embedding generation: {e}")
+                # Catching general exception as specific SDK exceptions might differ
+                # We can refine this if we know specific google.genai exceptions
+                error_msg = str(e).lower()
+                if "rate limit" in error_msg or "429" in error_msg:
+                    logger.warning(f"Rate limit exceeded (attempt {attempt + 1}): {e}")
+                    if attempt < self.max_retries - 1:
+                        time.sleep(self.rate_limit_delay)
+                        continue
+                    else:
+                        raise GeminiServiceError(f"Rate limit exceeded after {self.max_retries} attempts")
+                
+                logger.error(f"Error during embedding generation (attempt {attempt + 1}): {e}")
                 if attempt < self.max_retries - 1:
-                    time.sleep(self.retry_delay)
+                    time.sleep(self.retry_delay * (2 ** attempt))
                     continue
                 else:
                     raise GeminiServiceError(f"Embedding generation failed: {e}")
@@ -129,7 +121,7 @@ class GeminiEmbeddingService:
         if not texts:
             return []
         
-        batch_size = 100 # Gemini supports up to 100 in free tier batch IIRC, or just use a safe number
+        batch_size = 100 
         embeddings = []
         
         logger.info(f"Generating embeddings for {len(texts)} texts using native batching...")
@@ -139,30 +131,27 @@ class GeminiEmbeddingService:
             
             for attempt in range(self.max_retries):
                 try:
-                    response = genai.embed_content(
+                    response = self.client.models.embed_content(
                         model=self.embedding_model,
-                        content=batch,
-                        task_type=task_type
+                        contents=batch,
+                        config=types.EmbedContentConfig(task_type=task_type)
                     )
                     
-                    if response.embedding:
-                        batch_results = [np.array(e, dtype=np.float32) for e in response.embedding]
+                    if response.embeddings:
+                        batch_results = [np.array(e.values, dtype=np.float32) for e in response.embeddings]
                         embeddings.extend(batch_results)
                         break
                     else:
                         raise GeminiServiceError("Empty embedding results")
                         
-                except google_exceptions.ResourceExhausted as e:
-                    logger.warning(f"Batch rate limit exceeded (attempt {attempt + 1}): {e}")
-                    if attempt < self.max_retries - 1:
-                        time.sleep(self.rate_limit_delay)
-                        continue
-                    else:
-                        # Fallback to individual processing if batch fails repeatedly
-                        for t in batch:
-                            embeddings.append(self.generate_embedding(t, task_type))
-                        break
                 except Exception as e:
+                    error_msg = str(e).lower()
+                    if "rate limit" in error_msg or "429" in error_msg:
+                        logger.warning(f"Batch rate limit exceeded (attempt {attempt + 1}): {e}")
+                        if attempt < self.max_retries - 1:
+                            time.sleep(self.rate_limit_delay)
+                            continue
+                    
                     logger.error(f"Batch embedding error: {e}")
                     if attempt < self.max_retries - 1:
                         time.sleep(self.retry_delay)
@@ -174,7 +163,7 @@ class GeminiEmbeddingService:
                         break
             
             if i + batch_size < len(texts):
-                time.sleep(1.0) # More cautious delay
+                time.sleep(1.0) 
                 
         return embeddings
     
@@ -210,9 +199,6 @@ class GeminiEmbeddingService:
     def get_embedding_dimension(self) -> int:
         """
         Get the dimension of embeddings generated by the current model.
-        
-        Returns:
-            Embedding dimension size
         """
         return rag_config.config.vector_dimension
     
@@ -224,7 +210,6 @@ class GeminiEmbeddingService:
             Dictionary containing health check results
         """
         try:
-            # Basic configuration check without API call
             if not self.config.get('api_key'):
                 return {
                     "status": "unhealthy",
@@ -233,14 +218,12 @@ class GeminiEmbeddingService:
                     "api_accessible": False
                 }
 
-            # Return healthy status without making API call during initialization
-            # This prevents rate limit issues during system startup
             return {
                 "status": "healthy",
                 "model": self.embedding_model,
                 "embedding_dimension": self.get_embedding_dimension(),
                 "api_accessible": True,
-                "test_embedding_valid": True  # Assume valid until proven otherwise
+                "test_embedding_valid": True 
             }
         except Exception as e:
             logger.error(f"Gemini service health check failed: {e}")
@@ -269,8 +252,7 @@ class GeminiGenerationService:
         self.rate_limit_delay = 60.0  # seconds for rate limiting
         
         try:
-            genai.configure(api_key=self.config['api_key'])
-            self.model = genai.GenerativeModel(self.model_name)
+            self.client = genai.Client(api_key=self.config['api_key'])
             logger.info(f"Gemini generation service configured with model: {self.model_name}")
         except Exception as e:
             logger.error(f"Failed to configure Gemini generation service: {e}")
@@ -299,9 +281,10 @@ class GeminiGenerationService:
             try:
                 logger.debug(f"Generating response (attempt {attempt + 1}): {prompt[:100]}...")
                 
-                response = self.model.generate_content(
-                    prompt,
-                    generation_config=genai.types.GenerationConfig(
+                response = self.client.models.generate_content(
+                    model=self.model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
                         max_output_tokens=max_tokens,
                         temperature=0.7,
                         top_p=0.8,
@@ -315,15 +298,16 @@ class GeminiGenerationService:
                 else:
                     raise GeminiServiceError("Empty response generated")
                     
-            except google_exceptions.ResourceExhausted as e:
-                logger.warning(f"Rate limit exceeded (attempt {attempt + 1}): {e}")
-                if attempt < self.max_retries - 1:
-                    time.sleep(self.rate_limit_delay)
-                    continue
-                else:
-                    raise GeminiServiceError(f"Rate limit exceeded after {self.max_retries} attempts")
-                    
             except Exception as e:
+                error_msg = str(e).lower()
+                if "rate limit" in error_msg or "429" in error_msg:
+                    logger.warning(f"Rate limit exceeded (attempt {attempt + 1}): {e}")
+                    if attempt < self.max_retries - 1:
+                        time.sleep(self.rate_limit_delay)
+                        continue
+                    else:
+                        raise GeminiServiceError(f"Rate limit exceeded after {self.max_retries} attempts")
+                
                 logger.error(f"Error during text generation (attempt {attempt + 1}): {e}")
                 if attempt < self.max_retries - 1:
                     time.sleep(self.retry_delay * (2 ** attempt))
@@ -341,7 +325,6 @@ class GeminiGenerationService:
             Dictionary containing health check results
         """
         try:
-            # Basic configuration check without API call
             if not self.config.get('api_key'):
                 return {
                     "status": "unhealthy",
@@ -350,13 +333,11 @@ class GeminiGenerationService:
                     "api_accessible": False
                 }
 
-            # Return healthy status without making API call during initialization
-            # This prevents rate limit issues during system startup
             return {
                 "status": "healthy",
                 "model": self.model_name,
                 "api_accessible": True,
-                "test_generation_successful": True  # Assume valid until proven otherwise
+                "test_generation_successful": True 
             }
         except Exception as e:
             logger.error(f"Gemini generation service health check failed: {e}")
