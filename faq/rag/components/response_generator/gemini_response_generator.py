@@ -97,8 +97,9 @@ Instructions:
 4. Keep the response concise but complete
 5. Maintain a {tone} tone throughout
 6. If context suggests this is a follow-up question, reference previous discussion appropriately
+""",
 
-            """,            'semantic_validation': """
+            'semantic_validation': """
 You are a semantic validator for a RAG system. Determine if the provided FAQ is a correct and appropriate answer to the user's question.
 
 User Question: "{query}"

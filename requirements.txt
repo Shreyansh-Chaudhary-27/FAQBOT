@@ -77,4 +77,3 @@ pinecone-client==5.0.1
 tenacity==8.2.3
 python-docx
 torch
-sentence-transformers
