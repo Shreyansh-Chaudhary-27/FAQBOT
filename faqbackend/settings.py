@@ -234,5 +234,5 @@ LOGGING = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://chatbot-1q9l.onrender.com',
+    'https://faqbot-lkh9.onrender.com',
 ]
